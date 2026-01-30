@@ -1,54 +1,43 @@
-# FinancialResearcher Crew
+# 🤖 AI Financial Researcher
 
-Welcome to the FinancialResearcher Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+A multi-agent AI system using CrewAI that generates comprehensive research reports on any company using real-time web search.
 
-## Installation
+## Features
 
-Ensure you have Python >=3.10 <3.14 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
+- **Multi-Agent System**: Researcher and Analyst agents working together
+- **Real-time Data**: Uses Serper API for current web search results
+- **Web Interface**: Gradio-based UI for easy interaction
+- **Comprehensive Reports**: Detailed analysis with executive summary, challenges, opportunities, and future outlook
 
-First, if you haven't already, install uv:
+## Setup
 
+1. **Install dependencies**:
+   ```bash
+   uv sync
+   ```
+
+2. **Set up environment variables** in `.env`:
+   ```
+   GROQ_API_KEY=your_groq_api_key
+   SERPER_API_KEY=your_serper_api_key
+   ```
+
+## Usage
+
+### Command Line
 ```bash
-pip install uv
+crewai run
 ```
 
-Next, navigate to your project directory and install the dependencies:
-
-(Optional) Lock the dependencies and install them by using the CLI command:
+### Web Interface
 ```bash
-crewai install
-```
-### Customizing
-
-**Add your `OPENAI_API_KEY` into the `.env` file**
-
-- Modify `src/financial_researcher/config/agents.yaml` to define your agents
-- Modify `src/financial_researcher/config/tasks.yaml` to define your tasks
-- Modify `src/financial_researcher/crew.py` to add your own logic, tools and specific args
-- Modify `src/financial_researcher/main.py` to add custom inputs for your agents and tasks
-
-## Running the Project
-
-To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
-
-```bash
-$ crewai run
+python app.py
 ```
 
-This command initializes the financial_researcher Crew, assembling the agents and assigning them tasks as defined in your configuration.
+## Tech Stack
 
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
-
-## Understanding Your Crew
-
-The financial_researcher Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
-
-## Support
-
-For support, questions, or feedback regarding the FinancialResearcher Crew or crewAI.
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
-
-Let's create wonders together with the power and simplicity of crewAI.
+- **CrewAI**: Multi-agent orchestration
+- **Groq**: LLM provider (Llama 3.1 8B)
+- **Serper**: Web search API
+- **Gradio**: Web interface
+- **Python**: Core language
